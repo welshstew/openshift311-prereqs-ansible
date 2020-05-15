@@ -1,7 +1,7 @@
 ---
 - block:
   - name: Subscribe this host
-    shell: "subscription-manager register --username {{redhat_username}} --password {{redhat_password}}"
+    shell: "subscription-manager register --username {{redhat_username}} --password {{redhat_password}} --force"
 
   - name: Attach to pool
     shell: "subscription-manager attach --pool={{redhat_poolid}}"
