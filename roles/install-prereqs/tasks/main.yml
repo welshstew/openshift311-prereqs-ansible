@@ -1,0 +1,4 @@
+---
+- block:
+    - name: Subscribe this host
+      shell: "subscription-manager register --username {{redhat_username}} --password {{redhat_password}}"

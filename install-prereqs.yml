@@ -1,0 +1,6 @@
+---
+- hosts: all
+  tasks:
+    - block:
+        - name: Subscribe and Install Prereqs
+          include_role: name=install-prereqs
