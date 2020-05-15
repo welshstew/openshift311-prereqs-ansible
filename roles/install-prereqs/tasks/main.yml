@@ -1,4 +1,16 @@
 ---
 - block:
-    - name: Subscribe this host
-      shell: "subscription-manager register --username {{redhat_username}} --password {{redhat_password}}"
+  - name: Subscribe this host
+    shell: "subscription-manager register --username {{redhat_username}} --password {{redhat_password}}"
+
+  - name: Attach to pool
+    shell: "subscription-manager attach --pool={{redhat_poolid}}"
+
+  - name: Disable all subscription-manager 
+    shell: subscription-manager repos --disable="*"      
+
+  - name: Disable all yum repos
+    shell: "yum-config-manager --disable \*"
+
+  - name: Enable Openshift 3.11 repos
+    shell: "subscription-manager repos  --enable="rhel-7-server-rpms"  --enable="rhel-7-server-extras-rpms" --enable="rhel-7-server-ose-3.11-rpms" --enable="rhel-7-server-ansible-2.9-rpms""

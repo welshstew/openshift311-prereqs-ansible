@@ -16,3 +16,9 @@ redhat_username:
 redhat_password:
 redhat_poolid:
 ```
+
+Run with:
+
+```
+--extra-vars "redhat_username=1.23.45 redhat_password=foo redhat_poolid=123"
+```
